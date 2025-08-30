@@ -1,1 +1,36 @@
 /* 여기에 스타일을 구현해 주세요 */
+.avatar img {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+}
+
+.circle_gray,
+.circle_green {
+  width: 16px;
+  height: 16px;
+  border: 2px solid white;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+}
+
+.circle_gray {
+  background-color: #dbdbdb;
+}
+
+.circle_green {
+  background-color: #4cfe88;
+}
+
+.first_row,
+.second_row {
+  display: flow-root;
+
+  .avatar {
+    position: relative;
+    float: left;
+    margin: 20px 0 0 20px;
+  }
+}
