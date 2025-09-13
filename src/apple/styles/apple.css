@@ -1,3 +1,86 @@
-@import "./card-component.css";
+@import './card-component.css';
 
-/* 카드 레이아웃 */
+.grid-layout {
+  display: grid;
+  gap: var(--base-spacing);
+  grid-template-columns: 1fr;
+}
+
+@media (min-width: 1024px) {
+  .grid-layout {
+    grid-template-columns: 1fr 1fr;
+
+    .wrapper {
+      &:nth-child(-n + 3) {
+        grid-column: 1 / -1;
+      }
+
+      &.ipad-pro {
+        background-image: image-set(url('../products/ipad_pro_wide.jpeg') 1x, url('../products/ipad_pro_wide_2x.jpeg') 2x);
+      }
+
+      &.ipad-air {
+        background-image: image-set(url('../products/ipad_air_wide.jpeg') 1x, url('../products/ipad_air_wide_2x.jpeg') 2x);
+      }
+
+      &.iphone-15pro {
+        background-image: image-set(url('../products/iphone15_pro_wide.jpeg') 1x, url('../products/iphone15_pro_wide_2x.jpeg') 2x);
+      }
+
+      h1 {
+        font-size: var(--extra-large-text);
+      }
+      .sub {
+        font-size: var(--medium-text);
+      }
+      .buttons {
+        font-size: var(--x-small-text);
+      }
+    }
+  }
+}
+
+.wrapper {
+  &.ipad-pro {
+    background-image: image-set(url('../products/ipad_pro.jpeg') 1x, url('../products/ipad_pro_2x.jpeg') 2x);
+  }
+
+  &.ipad-air {
+    background-image: image-set(url('../products/ipad_air.jpeg') 1x, url('../products/ipad_air_2x.jpeg') 2x);
+  }
+
+  &.iphone-15pro {
+    background-image: image-set(url('../products/iphone15_pro.jpeg') 1x, url('../products/iphone15_pro_2x.jpeg') 2x);
+  }
+
+  &.iphone-15 {
+    background-image: image-set(url('../products/iphone15.jpeg') 1x, url('../products/iphone15_2x.jpeg') 2x);
+  }
+
+  &.watch {
+    background-image: image-set(url('../products/apple_watch.jpeg') 1x, url('../products/apple_watch_2x.jpeg') 2x);
+  }
+
+  &.macbook-air {
+    background-image: image-set(url('../products/macbook_air.jpeg') 1x, url('../products/macbook_air_2x.jpeg') 2x);
+  }
+
+  &.airpods-pro {
+    background-image: image-set(url('../products/airpods_pro.jpeg') 1x, url('../products/airpods_pro_2x.jpeg') 2x);
+  }
+}
+
+.wrapper:nth-child(even) {
+  .contents {
+    color: var(--black);
+  }
+  .more {
+    background: var(--black);
+    color: var(--white);
+  }
+  .price {
+    background: transparent;
+    border: 1px solid var(--black);
+    color: var(--black);
+  }
+}

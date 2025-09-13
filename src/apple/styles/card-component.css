@@ -1,3 +1,62 @@
-@import "./reset.css";
-@import "./theme.css";
-@import "./base.css";
+@import './reset.css';
+@import './theme.css';
+@import './base.css';
+
+.wrapper {
+  background-size: cover; /* 화면 넓어지면 가로 맞추고 세로는 잘려서 다가오는 느낌 */
+  background-position: center; /* 중심 맞춤 */
+  height: var(--size);
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding-block-start: var(--large-spacing);
+
+  .contents {
+    color: var(--white);
+    display: flex;
+    flex-flow: column nowrap;
+    gap: var(--small-spacing);
+
+    h1 {
+      font-size: var(--large-text);
+      text-align: center;
+      font-weight: 700;
+    }
+
+    .sub {
+      font-size: var(--base-text);
+      text-align: center;
+      margin-block-end: var(--x-small-spacing);
+      line-height: var(--line-normal);
+    }
+
+    span {
+      font-size: var(--small-text);
+      color: var(--gray);
+      align-self: center;
+      padding-block-end: var(--base-spacing);
+    }
+  }
+
+  .buttons {
+    justify-items: centers;
+    display: inline-flex;
+    gap: var(--small-spacing);
+    font-size: var(--xx-small-text);
+    .more {
+      background: var(--blue-200);
+      border: none;
+      color: var(--white);
+      border-radius: 20px;
+      padding: var(--x-small-spacing) var(--small-spacing);
+    }
+
+    .price {
+      background: transparent;
+      border: 1px solid var(--blue-200);
+      color: var(--blue-200);
+      border-radius: 20px;
+      padding: var(--x-small-spacing) var(--small-spacing);
+    }
+  }
+}
